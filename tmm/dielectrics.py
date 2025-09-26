@@ -23,8 +23,8 @@ def from_refractiveindex_info(url, **kwargs) -> object:
 
 
 rp_n2 = from_refractiveindex_info(
-    r"https://refractiveindex.info/database/data/other/perovskite/2D%20HOIP/nk/Song-RP2.yml",
-    skip_header=15, skip_footer=2
+    pathlib.Path(__file__).resolve().parent / pathlib.Path(r"refractiveindex.info\database\data\other\perovskite\2D%20HOIP\nk\Song-RP2.yml"),
+    skip_headers=15, skip_footers=2
 )
 
 
@@ -38,3 +38,4 @@ def insulator(n:float):
 
 n_air = insulator(n=1.)
 n_fused_silica = insulator(n=1.46)
+
